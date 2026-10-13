@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mukund Pratap Srivastav — Software Engineer, Distributed Systems Architect & Full-Stack Developer. Portfolio showcasing scalable engineering systems.">
+  <meta name="keywords" content="Mukund Pratap Srivastav, Software Engineer, Full-Stack Developer, Python, JavaScript, Cloud, System Design, Portfolio">
+  <meta name="author" content="Mukund Pratap Srivastav">
+  <meta name="theme-color" content="#070d14">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Mukund Pratap Srivastav — Software Engineer & Tech Innovator">
+  <meta property="og:description" content="Personal portfolio and engineering showcase of Mukund Pratap Srivastav. Building scalable backends and human-centric software.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/mukund-portrait-3x4.jpg">
+
+  <title>Mukund Pratap Srivastav | Software Engineer & Tech Innovator</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Cinzel (Royal Display), Syne (Avant-Garde Tech), Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background SVG Pattern Definition Layer -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <!-- Geometric Diamond Lattice Pattern -->
+      <pattern id="diamondLattice" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="rgba(212, 175, 55, 0.08)" stroke-width="1"/>
+        <circle cx="20" cy="20" r="1.5" fill="rgba(200, 103, 65, 0.25)"/>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- Background Canvas: Golden Constellations & Copper Embers -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Geometric Watermark Ambient Mesh -->
+  <div class="ambient-pattern-layer" aria-hidden="true"></div>
+
+  <!-- Site Header & Royal Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-logo" aria-label="Mukund Pratap Srivastav Home">
+        <div class="logo-crest">
+          <span class="crest-monogram">MPS</span>
+          <div class="crest-corner tl"></div>
+          <div class="crest-corner tr"></div>
+          <div class="crest-corner bl"></div>
+          <div class="crest-corner br"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Mukund Pratap Srivastav</span>
+          <span class="logo-role">Software Engineer & Systems Architect</span>
+        </div>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Arsenal</a></li>
+          <li><a href="#projects" class="nav-link">Systems</a></li>
+          <li><a href="#terminal" class="nav-link">CLI Terminal</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#contact" class="btn btn-primary btn-sm">Hire Me</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light / Dark Mode">
+          <!-- Icon injected by JS -->
+        </button>
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Hero Section (Bespoke Architectural Portal & Layout) -->
+    <section class="section hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Pitch & Identity -->
+          <div class="hero-content">
+            
+            <div class="status-badge" id="backend-status-pill">
+              <span class="status-pulse" id="backend-status-dot"></span>
+              <span id="backend-status-text">🟢 Full-Stack Engine Active (Flask + SQLite)</span>
+            </div>
+
+            <div class="hero-title-group">
+              <span class="hero-greeting">ENGINEER & ARCHITECT</span>
+              <h1 class="hero-title">
+                Mukund Pratap <br>
+                <span class="gradient-text">Srivastav</span>
+              </h1>
+            </div>
+
+            <div class="hero-subtitle">
+              <span class="subtitle-label">Specializing in</span>
+              <span class="typewriter-text" id="typewriter">Software Engineering</span>
+            </div>
+
+            <p class="hero-description">
+              Designing high-throughput distributed microservices, low-latency data pipelines, and responsive human-centric web applications. Blending mathematical rigor, algorithm efficiency, and pristine code craftsmanship.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Systems</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span>Initiate Contact</span>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+
+            <!-- Contact Strip with Ivory Greenish & Copper highlights -->
+            <div class="hero-contact-strip">
+              <a href="mailto:mukund.tech.dev@gmail.com" class="contact-chip" title="Direct Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>mukund.tech.dev@gmail.com</span>
+              </a>
+              <a href="tel:+91XXXXXXXXXX" id="hero-phone-link" class="contact-chip" title="Call / WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span id="hero-phone-text">+91 (Provide Number)</span>
+              </a>
+              <span class="contact-chip">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>India • Available Globally</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Hero Visual: Arched Portal Monument with Gold Filigree & Copper Glow -->
+          <div class="hero-visual">
+            <div class="monolith-portal-wrapper">
+              
+              <!-- Ambient Radiance Aura -->
+              <div class="portal-copper-aura"></div>
+              
+              <!-- Floating Jewel Badges -->
+              <div class="floating-jewel-badge badge-left">
+                <div class="jewel-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <div class="jewel-content">
+                  <span class="jewel-sub">Architecture</span>
+                  <span class="jewel-val">Clean Code & APIs</span>
+                </div>
+              </div>
+
+              <!-- Right-Side Floating Jewel Badge -->
+              <div class="floating-jewel-badge badge-right">
+                <div class="jewel-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                </div>
+                <div class="jewel-content">
+                  <span class="jewel-sub">Cloud Systems</span>
+                  <span class="jewel-val">Microservices Ready</span>
+                </div>
+              </div>
+
+              <!-- Main Architectural Portal Frame -->
+              <div class="monolith-arch-frame">
+                
+                <!-- Ornamental Corner Filigrees -->
+                <div class="filigree-corner tl"></div>
+                <div class="filigree-corner tr"></div>
+                <div class="filigree-corner bl"></div>
+                <div class="filigree-corner br"></div>
+
+                <!-- Arched Image Window -->
+                <div class="arch-window">
+                  <div class="arch-inner-bezel"></div>
+                  <img
+                    src="assets/mukund-portrait-3x4.jpg"
+                    alt="Mukund Pratap Srivastav Portrait"
+                    class="arch-portrait-img"
+                    loading="eager"
+                    onerror="this.onerror=null; this.src='assets/mukund.jpeg';"
+                  >
+                </div>
+
+                <!-- Pedestal Plaque -->
+                <div class="pedestal-plaque">
+                  <h3 class="pedestal-name">Mukund Pratap Srivastav</h3>
+                  <p class="pedestal-title">Software Engineer & Systems Architect</p>
+                  <div class="pedestal-tags">
+                    <span class="pedestal-tag">Python</span>
+                    <span class="pedestal-tag">Distributed Systems</span>
+                    <span class="pedestal-tag">Cloud</span>
+                    <span class="pedestal-tag">Algorithms</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Luxe Metrics Bar -->
+        <div class="luxe-metrics-ribbon">
+          <div class="metric-item">
+            <span class="metric-val">15+</span>
+            <span class="metric-lbl">Production Systems Built</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">99.9%</span>
+            <span class="metric-lbl">Reliability & Uptime Focus</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">1000+</span>
+            <span class="metric-lbl">Git Contributions & Commits</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">100%</span>
+            <span class="metric-lbl">Clean Code Discipline</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section (Asymmetric Royal Bento Grid Pattern) -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Philosophy & Background</span>
+          <h2 class="section-title">Architectural Foundation</h2>
+          <p class="section-subtitle">Bridging algorithmic theory with high-performance, real-world software engineering.</p>
+        </div>
+
+        <div class="royal-bento-grid">
+          
+          <!-- Bento Box 1: Core Philosophy -->
+          <div class="bento-box bento-large">
+            <div class="bento-pattern-accent"></div>
+            <div class="bento-header">
+              <span class="bento-num">01</span>
+              <h3 class="bento-title">Engineering Discipline</h3>
+            </div>
+            <p class="bento-text">
+              I am <strong>Mukund Pratap Srivastav</strong>. My software engineering ethos treats codebase maintainability and architectural clarity as first-class citizens. By combining structured domain-driven design, comprehensive automated testing, and clean patterns, I engineer solutions built to scale effortlessly.
+            </p>
+            <p class="bento-text">
+              From crafting event-driven microservices to optimizing memory layouts and database queries, my work balances high-velocity execution with production stability.
+            </p>
+          </div>
+
+          <!-- Bento Box 2: Systems Architecture -->
+          <div class="bento-box">
+            <div class="bento-pattern-accent"></div>
+            <div class="bento-header">
+              <span class="bento-num">02</span>
+              <h3 class="bento-title">Distributed Systems</h3>
+            </div>
+            <p class="bento-text">
+              Experienced in container orchestration, decoupled microservice topologies, rate-limiting API gateways, and asynchronous telemetry aggregation.
+            </p>
+            <div class="bento-pill-group">
+              <span class="bento-pill">Docker</span>
+              <span class="bento-pill">FastAPI</span>
+              <span class="bento-pill">Redis</span>
+            </div>
+          </div>
+
+          <!-- Bento Box 3: Code Craftsmanship -->
+          <div class="bento-box">
+            <div class="bento-pattern-accent"></div>
+            <div class="bento-header">
+              <span class="bento-num">03</span>
+              <h3 class="bento-title">Code Craftsmanship</h3>
+            </div>
+            <p class="bento-text">
+              Adherence to SOLID principles, modular patterns, comprehensive logging, and automated CI/CD deployment pipelines.
+            </p>
+            <div class="bento-pill-group">
+              <span class="bento-pill">Clean Architecture</span>
+              <span class="bento-pill">CI/CD</span>
+              <span class="bento-pill">Python</span>
+            </div>
+          </div>
+
+          <!-- Bento Box 4: Human-Centric Systems -->
+          <div class="bento-box bento-wide">
+            <div class="bento-pattern-accent"></div>
+            <div class="bento-header">
+              <span class="bento-num">04</span>
+              <h3 class="bento-title">Interactive Frontends & Ecosystems</h3>
+            </div>
+            <p class="bento-text">
+              Software is only as good as the clarity it brings to humans. I design hyper-responsive web interfaces that transform complex underlying data into elegant, intuitive dashboards.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section (Patterned Arsenal Cards) -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Arsenal</span>
+          <h2 class="section-title">Core Competencies</h2>
+          <p class="section-subtitle">A balanced repertoire spanning backend distributed computing, modern interfaces, and cloud DevOps.</p>
+        </div>
+
+        <div class="arsenal-grid">
+          
+          <!-- Category 1: Backend & APIs -->
+          <div class="arsenal-card">
+            <div class="card-filigree-top"></div>
+            <div class="arsenal-header">
+              <div class="arsenal-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <h3 class="arsenal-title">Backend & APIs</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Python (Flask / FastAPI)</span>
+                  <span class="skill-percentage">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Node.js & Express</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">RESTful & Event-Driven APIs</span>
+                  <span class="skill-percentage">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Frontend & UI -->
+          <div class="arsenal-card">
+            <div class="card-filigree-top"></div>
+            <div class="arsenal-header">
+              <div class="arsenal-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3 class="arsenal-title">Frontend & UI</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript (ES6+) / TypeScript</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5, Modern CSS & Responsive UI</span>
+                  <span class="skill-percentage">95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">React & Component Design</span>
+                  <span class="skill-percentage">82%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 82%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Databases & Cloud -->
+          <div class="arsenal-card">
+            <div class="card-filigree-top"></div>
+            <div class="arsenal-header">
+              <div class="arsenal-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </div>
+              <h3 class="arsenal-title">Databases & Cloud</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">PostgreSQL & SQLite</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Docker & Containerization</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Git & CI/CD Automation</span>
+                  <span class="skill-percentage">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Core CS -->
+          <div class="arsenal-card">
+            <div class="card-filigree-top"></div>
+            <div class="arsenal-header">
+              <div class="arsenal-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+              </div>
+              <h3 class="arsenal-title">Core CS & Design</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Data Structures & Algorithms</span>
+                  <span class="skill-percentage">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">System Architecture & Scalability</span>
+                  <span class="skill-percentage">84%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 84%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">OOP & Design Patterns</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Editorial Systems Gallery) -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Engineering Showcase</span>
+          <h2 class="section-title">Featured Systems</h2>
+          <p class="section-subtitle">Real-world production architectures, APIs, and responsive applications.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">All Systems</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="cloud">Cloud & APIs</button>
+          <button class="filter-btn" data-filter="systems">Systems & Tools</button>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1 -->
+          <div class="project-card" data-category="cloud">
+            <div class="project-thumbnail">
+              <div class="thumbnail-pattern-grid"></div>
+              <div class="project-thumbnail-icon">☁️</div>
+              <span class="project-badge">Cloud-Native</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Cloud-Native Microservices Platform</h3>
+              <p class="project-desc">
+                High-throughput distributed service architecture featuring automated container orchestration, rate-limiting API gateways, and asynchronous event streams.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Redis</span>
+              </div>
+              <div class="project-footer">
+                <button class="like-btn" data-project="cloud_platform" aria-label="Like Cloud Platform">
+                  <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span id="likes-cloud_platform">42</span>
+                </button>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-outline btn-sm">Explore Tech</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-category="fullstack">
+            <div class="project-thumbnail">
+              <div class="thumbnail-pattern-grid"></div>
+              <div class="project-thumbnail-icon">🌾</div>
+              <span class="project-badge">Smart Agro IoT</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Smart Agro & IoT Analytics Engine</h3>
+              <p class="project-desc">
+                Telemetry ingestion dashboard providing real-time soil moisture monitoring, predictive harvest insights, and sensor telemetry analysis.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">Chart.js</span>
+              </div>
+              <div class="project-footer">
+                <button class="like-btn" data-project="smart_analytics" aria-label="Like Smart Analytics">
+                  <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span id="likes-smart_analytics">38</span>
+                </button>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-outline btn-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-category="fullstack">
+            <div class="project-thumbnail">
+              <div class="thumbnail-pattern-grid"></div>
+              <div class="project-thumbnail-icon">⚡</div>
+              <span class="project-badge">WebSockets</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Real-Time Collaborative Code Studio</h3>
+              <p class="project-desc">
+                Browser-based collaborative development studio with low-latency operational transformation, multi-cursor synchronization, and instant code execution.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">Monaco Editor</span>
+                <span class="tech-tag">Express</span>
+              </div>
+              <div class="project-footer">
+                <button class="like-btn" data-project="realtime_collab" aria-label="Like Collab Studio">
+                  <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span id="likes-realtime_collab">31</span>
+                </button>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-outline btn-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-category="systems">
+            <div class="project-thumbnail">
+              <div class="thumbnail-pattern-grid"></div>
+              <div class="project-thumbnail-icon">📊</div>
+              <span class="project-badge">Observability</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">DevPulse Engineering Observability Suite</h3>
+              <p class="project-desc">
+                Lightweight systems monitoring tool tracking CPU, memory, SQLite connection pools, and endpoint latency with visual alerts and automated reporting.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Telemetry</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+              <div class="project-footer">
+                <button class="like-btn" data-project="dev_pulse" aria-label="Like DevPulse">
+                  <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span id="likes-dev_pulse">27</span>
+                </button>
+                <div class="project-actions">
+                  <a href="#contact" class="btn btn-outline btn-sm">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive CLI Terminal Section (Luxe Obsidian-Gold Shell) -->
+    <section class="section" id="terminal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive CLI</span>
+          <h2 class="section-title">Developer Terminal</h2>
+          <p class="section-subtitle">Type shell commands directly in your browser to inspect system info, skills, and metrics.</p>
+        </div>
+
+        <div class="terminal-wrapper">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">mps@portfolio-os: ~</span>
+            <span style="font-size: 0.75rem; color: var(--gold-pure);">bash v5.2</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-output" id="terminal-output">
+              <p class="terminal-line info">Mukund Pratap Srivastav Interactive CLI v2.0 (Powered by Flask + SQLite)</p>
+              <p class="terminal-line dim">Type 'help' to see all available commands or 'stats' for live server metrics.</p>
+            </div>
+            <div class="terminal-prompt-row">
+              <span class="terminal-prompt">mps@portfolio:~$</span>
+              <input type="text" id="terminal-input" class="terminal-input" placeholder="type a command (e.g., 'help', 'skills', 'about')..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (Royal Consultation Portal) -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Inquiry & Collaboration</span>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-subtitle">Have an opportunity, project idea, or technical question? Send a message directly.</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info Card -->
+          <div class="contact-info-card">
+            <div class="card-filigree-top"></div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-details">
+                <h4>Direct Email</h4>
+                <p><a href="mailto:mukund.tech.dev@gmail.com" style="color: var(--gold-pure);">mukund.tech.dev@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-details">
+                <h4>Direct Phone / WhatsApp</h4>
+                <p><a href="tel:+91XXXXXXXXXX" id="contact-phone-link" style="color: var(--copper-bright);">+91 (Provide Number)</a></p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-details">
+                <h4>Location & Availability</h4>
+                <p>India • Open to On-site, Hybrid & Remote Roles</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              </div>
+              <div class="contact-details">
+                <h4>Response Time</h4>
+                <p>Typically replies within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="contact-form-card">
+            <div class="card-filigree-top"></div>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="e.g. john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Inquiry / Role Collaboration">
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <div id="form-feedback" class="form-feedback"></div>
+
+              <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">
+                <span>Transmit Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="logo-crest" style="width: 44px; height: 44px;">
+        <span class="crest-monogram" style="font-size: 1rem;">MPS</span>
+      </div>
+      <span class="logo-name" style="font-family: 'Cinzel', serif; font-size: 1.3rem;">Mukund Pratap Srivastav</span>
+      <p class="footer-copy">
+        © 2026 Mukund Pratap Srivastav. All rights reserved. Designed with custom geometric patterns & modern web standards.
+      </p>
+      <a href="#hero" class="contact-chip" style="font-size: 0.82rem;">
+        <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h6v8h4v-8h6z"/></svg>
+        <span>Ascend to Top</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

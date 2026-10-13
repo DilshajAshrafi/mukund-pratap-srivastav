@@ -1,0 +1,1550 @@
+/* ==========================================================================
+   Mukund Pratap Srivastav — Luxury Architectural Design System
+   Palette: Ivory greenish white, Burgundy reddish copper shine, Gold texture & Bluish off
+   Typography: Cinzel, Syne, Inter, JetBrains Mono
+   ========================================================================== */
+
+:root {
+  /* --- 1. Bluish off (Deep Royal Midnight Slate) --- */
+  --bg-primary: #070d14;
+  --bg-secondary: #0b1420;
+  --bg-tertiary: #101c2b;
+  --bg-card: rgba(11, 20, 32, 0.88);
+  --bg-card-hover: rgba(16, 28, 44, 0.96);
+  --bluish-off-border: rgba(30, 50, 72, 0.65);
+
+  /* --- 2. Ivory greenish white (Pristine, Elegant, High-Legibility) --- */
+  --ivory-green: #f2f7f2;
+  --ivory-green-muted: #c8d8c9;
+  --ivory-green-dim: #8ba28d;
+  --ivory-green-tint: rgba(242, 247, 242, 0.08);
+
+  --text-primary: var(--ivory-green);
+  --text-secondary: var(--ivory-green-muted);
+  --text-muted: var(--ivory-green-dim);
+
+  /* --- 3. Burgundy reddish copper shine (Velvet & Molten Warmth) --- */
+  --burgundy: #74152f;
+  --burgundy-deep: #4d0e1f;
+  --copper-shine: #c86741;
+  --copper-bright: #e27d53;
+  --copper-light: #f09b75;
+  --copper-glow: rgba(200, 103, 65, 0.45);
+  --gradient-burgundy-copper: linear-gradient(135deg, #74152f 0%, #9e2b3c 35%, #c86741 70%, #e27d53 100%);
+
+  /* --- 4. Gold texture (Lustrous Multi-Stop Metallic Gold Foil) --- */
+  --gold-pure: #d4af37;
+  --gold-light: #fdf5c4;
+  --gold-dark: #9a741c;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --gradient-gold-foil: linear-gradient(135deg, #9a741c 0%, #c59b27 18%, #fdf5c4 38%, #d4af37 60%, #f5df88 80%, #9a741c 100%);
+  --gradient-gold-shimmer: linear-gradient(90deg, #d4af37 0%, #fdf5c4 50%, #b8860b 100%);
+
+  /* Combined Hero Gradient */
+  --gradient-primary: linear-gradient(135deg, #74152f 0%, #c86741 40%, #d4af37 80%, #fdf5c4 100%);
+  --gradient-glow: radial-gradient(circle, rgba(200, 103, 65, 0.3) 0%, rgba(212, 175, 55, 0.15) 50%, transparent 70%);
+
+  /* Borders & Shadows */
+  --border-color: rgba(212, 175, 55, 0.22);
+  --border-hover: rgba(226, 125, 83, 0.7);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 30px -4px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 20px 50px -8px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 0 35px var(--copper-glow);
+  --shadow-gold: 0 0 30px var(--gold-glow);
+
+  /* Fonts */
+  --font-serif: 'Cinzel', -apple-system, Georgia, serif;
+  --font-display: 'Syne', -apple-system, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* Light Theme Variables (Ivory Greenish White Canvas with Gold & Burgundy Accents) */
+[data-theme="light"] {
+  --bg-primary: #f2f7f2;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e4eee4;
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  --bluish-off-border: rgba(7, 13, 20, 0.12);
+
+  --text-primary: #070d14;
+  --text-secondary: #223444;
+  --text-muted: #566d58;
+
+  --border-color: rgba(212, 175, 55, 0.35);
+  --border-hover: rgba(116, 21, 47, 0.7);
+
+  --shadow-sm: 0 2px 10px rgba(7, 13, 20, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(7, 13, 20, 0.12);
+  --shadow-lg: 0 16px 40px -8px rgba(7, 13, 20, 0.16);
+  --shadow-glow: 0 0 25px rgba(200, 103, 65, 0.25);
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Body with Geometric Diamond & Radial Lattice Pattern */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  
+  /* Intricate Geometric Lattice Background Pattern */
+  background-image: 
+    radial-gradient(circle at 12% 18%, rgba(116, 21, 47, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 88% 70%, rgba(200, 103, 65, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 50% 40%, rgba(212, 175, 55, 0.08) 0%, transparent 55%),
+    linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+}
+
+/* Custom Scrollbar - Bluish off with Gold texture thumb */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--burgundy) 0%, var(--copper-shine) 50%, var(--gold-pure) 100%);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}
+
+/* Canvas Background (Gold & Copper Stardust) */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Ambient Geometric Pattern Watermark Layer */
+.ambient-pattern-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(212, 175, 55, 0.2), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, rgba(200, 103, 65, 0.2), rgba(0,0,0,0));
+  background-size: 100px 100px;
+  opacity: 0.5;
+}
+
+/* Typography & Display Utilities */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 14px rgba(200, 103, 65, 0.4));
+}
+
+.gold-gradient-text {
+  background: var(--gradient-gold-foil);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6.5rem 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+/* Section Tag with Ivory Greenish & Gold Texture Border */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.25rem;
+  background: rgba(116, 21, 47, 0.25);
+  border: 1px solid var(--gold-pure);
+  border-radius: var(--radius-full);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.95rem;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.2);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0.75rem auto 0 auto;
+}
+
+/* Header & Royal Navigation */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(7, 13, 20, 0.9);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal);
+}
+
+[data-theme="light"] .site-header {
+  background: rgba(242, 247, 242, 0.92);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Crest Monogram with Filigree Corners */
+.logo-crest {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-burgundy-copper);
+  border: 1.5px solid var(--gold-pure);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px var(--copper-glow);
+}
+
+.crest-monogram {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: var(--gold-light);
+  letter-spacing: -0.04em;
+}
+
+.crest-corner {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-color: var(--gold-light);
+  border-style: solid;
+}
+.crest-corner.tl { top: 2px; left: 2px; border-width: 1.5px 0 0 1.5px; }
+.crest-corner.tr { top: 2px; right: 2px; border-width: 1.5px 1.5px 0 0; }
+.crest-corner.bl { bottom: 2px; left: 2px; border-width: 0 0 1.5px 1.5px; }
+.crest-corner.br { bottom: 2px; right: 2px; border-width: 0 1.5px 1.5px 0; }
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.logo-role {
+  font-family: var(--font-display);
+  font-size: 0.73rem;
+  color: var(--gold-pure);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-light);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold-foil);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--gold-pure);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--copper-bright);
+  color: var(--copper-bright);
+  box-shadow: 0 0 18px var(--copper-glow);
+}
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.hamburger-btn span {
+  width: 24px;
+  height: 2px;
+  background: var(--gold-pure);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+/* Royal Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--gradient-burgundy-copper);
+  color: var(--ivory-green);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 22px var(--copper-glow);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 30px rgba(226, 125, 83, 0.7), 0 0 16px var(--gold-glow);
+  transform: translateY(-2px);
+  border-color: var(--gold-light);
+}
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--copper-shine);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold-pure);
+  border: 1px solid var(--gold-pure);
+}
+
+.btn-outline:hover {
+  border-color: var(--copper-bright);
+  color: var(--ivory-green);
+  background: rgba(200, 103, 65, 0.16);
+  box-shadow: 0 0 20px var(--copper-glow);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.52rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+/* Hero Section (Architectural Grid Layout) */
+.hero-section {
+  padding-top: 9.5rem;
+  padding-bottom: 5.5rem;
+  min-height: 94vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.42rem 1.15rem;
+  background: rgba(11, 20, 32, 0.92);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  width: fit-content;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.15);
+}
+
+.status-pulse {
+  width: 9px;
+  height: 9px;
+  background: var(--copper-bright);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--copper-bright);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(226, 125, 83, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 9px rgba(226, 125, 83, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(226, 125, 83, 0); }
+}
+
+.hero-greeting {
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--copper-bright);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  color: var(--text-secondary);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.subtitle-label {
+  color: var(--text-muted);
+}
+
+.typewriter-text {
+  color: var(--gold-light);
+  font-weight: 800;
+  border-right: 2px solid var(--copper-bright);
+  padding-right: 4px;
+  animation: blink 0.9s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: var(--copper-bright); }
+  50% { border-color: transparent; }
+}
+
+.hero-description {
+  font-size: 1.12rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.8;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.hero-contact-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.contact-chip:hover {
+  color: var(--gold-pure);
+}
+
+.contact-chip svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   Hero Visual: Architectural Arched Portal Monument
+   ========================================================================== */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.monolith-portal-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+}
+
+/* Radiant Copper Halo */
+.portal-copper-aura {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: 115%;
+  height: 115%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(116, 21, 47, 0.6) 0%, rgba(200, 103, 65, 0.42) 40%, rgba(212, 175, 55, 0.22) 70%, transparent 100%);
+  filter: blur(52px);
+  opacity: 0.7;
+  border-radius: var(--radius-xl);
+  z-index: 0;
+}
+
+/* Architectural Monolith Frame with Arch & Pedestal */
+.monolith-arch-frame {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid var(--gold-pure);
+  border-radius: 170px 170px var(--radius-xl) var(--radius-xl);
+  padding: 1.75rem 1.75rem 1.5rem 1.75rem;
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--transition-smooth), border-color var(--transition-normal);
+}
+
+.monolith-arch-frame:hover {
+  border-color: var(--copper-bright);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg), 0 0 45px var(--copper-glow);
+}
+
+/* Filigree Corner Brackets */
+.filigree-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--gold-pure);
+  border-style: solid;
+  pointer-events: none;
+}
+.filigree-corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.filigree-corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.filigree-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.filigree-corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+/* Arched Window & Bezel */
+.arch-window {
+  position: relative;
+  width: 240px;
+  height: 320px;
+  margin: 0.5rem auto 1.35rem auto;
+  border-radius: 140px 140px var(--radius-lg) var(--radius-lg);
+  overflow: hidden;
+  border: 4px solid var(--bg-secondary);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+}
+
+.arch-inner-bezel {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.arch-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  background-color: var(--bg-tertiary);
+  transition: transform 0.6s ease;
+}
+
+.monolith-arch-frame:hover .arch-portrait-img {
+  transform: scale(1.03);
+}
+
+/* Pedestal Plaque */
+.pedestal-plaque {
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.15rem;
+}
+
+.pedestal-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  color: var(--ivory-green);
+}
+
+.pedestal-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--gold-pure);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.95rem;
+}
+
+.pedestal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.pedestal-tag {
+  padding: 0.28rem 0.75rem;
+  background: rgba(16, 28, 43, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--ivory-green-muted);
+}
+
+/* Floating Jewel Badges (Left & Right Flanks) */
+.floating-jewel-badge {
+  position: absolute;
+  z-index: 10;
+  background: rgba(11, 20, 32, 0.96);
+  border: 1.5px solid var(--gold-pure);
+  border-radius: var(--radius-lg);
+  padding: 0.7rem 1.15rem;
+  box-shadow: var(--shadow-md), 0 0 22px rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: float 4.5s ease-in-out infinite;
+}
+
+.badge-left {
+  top: 12%;
+  left: -24px;
+  animation-delay: 0s;
+}
+
+/* Right Side Placement Prominently Positioned on the Right Flank */
+.badge-right {
+  top: 38%;
+  right: -85px;
+  animation-delay: 2.2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.jewel-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: rgba(116, 21, 47, 0.35);
+  border: 1px solid var(--copper-shine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-pure);
+  flex-shrink: 0;
+}
+
+.jewel-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.jewel-sub {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.jewel-val {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ivory-green);
+}
+
+/* Luxe Metrics Ribbon */
+.luxe-metrics-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 4.5rem;
+  padding: 1.75rem 2rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.metric-val {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 800;
+  background: var(--gradient-gold-foil);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.metric-lbl {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.metric-divider {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(180deg, transparent, var(--border-color), transparent);
+}
+
+/* ==========================================================================
+   About Section: Asymmetric Royal Bento Grid Pattern
+   ========================================================================== */
+.royal-bento-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.75rem;
+}
+
+.bento-box {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.bento-box:hover {
+  border-color: var(--copper-bright);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md), 0 0 25px var(--copper-glow);
+}
+
+/* Ornamental Pattern Header Accent on Cards */
+.bento-box::before,
+.card-filigree-top {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--copper-shine) 20%, var(--gold-light) 50%, var(--copper-shine) 80%, transparent 100%);
+}
+
+.bento-large {
+  grid-row: span 2;
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+
+.bento-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.bento-num {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--copper-bright);
+}
+
+.bento-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ivory-green);
+}
+
+.bento-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
+
+.bento-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.bento-pill {
+  padding: 0.35rem 0.85rem;
+  background: rgba(16, 28, 43, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+/* ==========================================================================
+   Technical Arsenal (Skills Matrix)
+   ========================================================================== */
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.75rem;
+}
+
+.arsenal-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.arsenal-card:hover {
+  border-color: var(--copper-bright);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md), 0 0 25px var(--copper-glow);
+}
+
+.arsenal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.arsenal-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: rgba(116, 21, 47, 0.3);
+  border: 1px solid var(--copper-shine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-pure);
+}
+
+.arsenal-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ivory-green);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.skill-name {
+  color: var(--text-primary);
+}
+
+.skill-percentage {
+  color: var(--gold-pure);
+  font-weight: 700;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 7px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--burgundy) 0%, var(--copper-shine) 50%, var(--gold-pure) 100%);
+  border-radius: var(--radius-full);
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 8px var(--copper-glow);
+}
+
+/* ==========================================================================
+   Projects Section: Editorial Gallery & Systems Grid
+   ========================================================================== */
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.85rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.55rem 1.4rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--gradient-burgundy-copper);
+  border-color: var(--gold-pure);
+  color: var(--ivory-green);
+  box-shadow: 0 4px 18px var(--copper-glow), 0 0 14px var(--gold-glow);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.project-card:hover {
+  border-color: var(--copper-bright);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), 0 0 32px var(--copper-glow);
+}
+
+.project-thumbnail {
+  position: relative;
+  height: 205px;
+  background: linear-gradient(135deg, #070d14 0%, #101c2b 50%, #2b111a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Subtle Geometric Grid in Thumbnail */
+.thumbnail-pattern-grid {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.project-thumbnail-icon {
+  font-size: 3.6rem;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-thumbnail-icon {
+  transform: scale(1.12);
+}
+
+.project-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.32rem 0.9rem;
+  background: rgba(7, 13, 20, 0.92);
+  border: 1px solid var(--gold-pure);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.project-content {
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+  color: var(--ivory-green);
+}
+
+.project-desc {
+  font-size: 0.96rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.28rem 0.72rem;
+  border-radius: var(--radius-sm);
+  background: rgba(16, 28, 43, 0.92);
+  color: var(--gold-pure);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.like-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.like-btn:hover,
+.like-btn.liked {
+  border-color: var(--copper-bright);
+  color: var(--copper-bright);
+  background: rgba(200, 103, 65, 0.16);
+  box-shadow: 0 0 15px var(--copper-glow);
+}
+
+.like-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   CLI Terminal Section: Obsidian-Gold Shell
+   ========================================================================== */
+.terminal-wrapper {
+  background: #050a10;
+  border: 1.5px solid var(--gold-pure);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(200, 103, 65, 0.2);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.terminal-header {
+  background: #09121d;
+  padding: 0.95rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #c86741; }
+.dot-yellow { background: #d4af37; }
+.dot-green { background: #8ba28d; }
+
+.terminal-title {
+  font-size: 0.82rem;
+  color: var(--gold-pure);
+  font-weight: 600;
+}
+
+.terminal-body {
+  padding: 1.65rem;
+  min-height: 280px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.terminal-output {
+  margin-bottom: 1rem;
+}
+
+.terminal-line {
+  margin-bottom: 0.45rem;
+}
+
+.terminal-line.info { color: var(--gold-light); }
+.terminal-line.success { color: var(--ivory-green); }
+.terminal-line.accent { color: var(--copper-bright); }
+.terminal-line.error { color: #f87171; }
+.terminal-line.dim { color: var(--text-muted); }
+
+.terminal-prompt-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.terminal-prompt {
+  color: var(--gold-pure);
+  font-weight: 700;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ivory-green);
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   Contact Section (Royal Consultation Portal)
+   ========================================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3.5rem;
+}
+
+.contact-info-card,
+.contact-form-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2.6rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-lg);
+  background: rgba(116, 21, 47, 0.3);
+  border: 1px solid var(--copper-shine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-pure);
+  flex-shrink: 0;
+}
+
+.contact-details h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--ivory-green);
+}
+
+.contact-details p {
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ivory-green);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.form-textarea {
+  min-height: 135px;
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--gold-pure);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25), 0 0 15px var(--copper-glow);
+}
+
+.form-feedback {
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.form-feedback.success {
+  display: block;
+  background: rgba(139, 162, 141, 0.15);
+  border: 1px solid var(--gold-pure);
+  color: var(--gold-light);
+}
+
+.form-feedback.error {
+  display: block;
+  background: rgba(116, 21, 47, 0.25);
+  border: 1px solid var(--copper-bright);
+  color: #fca5a5;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1100px) and (min-width: 769px) {
+  .badge-right {
+    right: -25px;
+  }
+  .badge-left {
+    left: -15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3.5rem;
+  }
+  .hero-content {
+    align-items: center;
+  }
+  .hero-subtitle {
+    justify-content: center;
+  }
+  .hero-description {
+    margin: 0 auto;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-contact-strip {
+    justify-content: center;
+  }
+  .royal-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-large,
+  .bento-wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .luxe-metrics-ribbon {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .metric-divider {
+    display: none;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    transform: translateY(-150%);
+    transition: transform var(--transition-normal);
+  }
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .floating-jewel-badge {
+    display: none;
+  }
+}
